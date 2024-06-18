@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州电子科技大学传播系</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://t8.baidu.com/it/u=2722097167,3067578430&fm=193') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo h1 {
+            margin-left: 10px;
+            font-size: 24px;
+            color: white;
+        }
+
+        .top-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .top-right a {
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .top-right a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .function-bar {
+            position: fixed;
+            top: 20%;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .function-item {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .function-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        /* 其他样式可以根据需要添加 */
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="c:\Users\admin\Pictures\1152.jpg" alt="HDU Logo"> <!-- 替换为您的校徽图案路径 -->
+            <h1>杭州电子科技大学传播系</h1>
+        </div>
+        <div class="top-right">
+            <a href="Untitled-chuanboxi.html" id="back-button">&#x2190;</a>
+            <a href="#">用户登录</a>
+            <a href="#">邮箱</a>
+            <a href="#">图书馆</a>
+        </div>
+    </header>
+
+    <div class="function-bar">
+        <div class="function-item" id="visitor-app">访客应用</div>
+        <div class="function-item" id="teacher-app">教师应用</div>
+        <div class="function-item" id="student-app">学生应用</div>
+    </div>
+
+    <div class="content" id="visitor-content">
+        <h2>专业介绍</h2>
+        
+        <h2>招生简章</h2>
+        
+    </div>
+
+    <div class="content" id="teacher-content">
+        <h2>作业批改</h2>
+        
+        <h2>更多应用</h2>
+        
+    </div>
+
+    <div class="content" id="student-content">
+        <h2>学评教</h2>
+        
+        <h2>作业提交</h2>
+        
+    </div>
+
+    <script>
+        // JavaScript 交互代码
+        document.getElementById('visitor-app').addEventListener('click', function() {
+            document.getElementById('visitor-content').style.display = 'block';
+            // 其他内容隐藏
+        });
+
+        // 为教师应用和学生应用添加类似的事件监听和显示逻辑
+
+        document.getElementById('back-button').addEventListener('click', function() {
+            // 隐藏所有内容
+            var contents = document.getElementsByClassName('content');
+            for(var i = 0; i < contents.length; i++) {
+                contents[i].style.display = 'none';
+            }
+        });
+
+        // 为内容添加点击外部区域关闭的功能
+        window.onclick = function(event) {
+            if (!event.target.matches('.function-item, .function-item *')) {
+                var contents = document.getElementsByClassName('content');
+                for(var i = 0; i < contents.length; i++) {
+                    contents[i].style.display = 'none';
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>
